@@ -1,0 +1,7 @@
+# listenPort is the port to listen on. 5000 aligns with application defaults.
+listenPort: 5000
+
+
+# listenHost is the host IP address to listen on. Most deployments do not
+# need to modify this.
+listenHost: ""

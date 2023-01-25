@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "listenPort",
+        "listenHost"
+    ],
+    "properties": {
+        "listenPort": {
+            "type": "integer",
+            "default": 5000,
+            "title": "The port on which the application will listen",
+            "examples": [
+                5000
+            ]
+        },
+        "listenHost": {
+            "type": "string",
+            "default": "",
+            "title": "The host on which the application will listen",
+            "examples": [
+                "192.168.10.10"
+            ]
+        }
+    },
+    "examples": [{
+        "listenPort": 5000,
+        "listenHost": ""
+    }]
+}

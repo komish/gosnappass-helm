@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gosnappass-{{ .Release.Name }}
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gosnappass
+  template:
+    metadata:
+      labels:
+        app: gosnappass
+    spec:
+      containers:
+      - name: gosnappass
+        image: ghcr.io/concerthall/gosnappass:latest
+        ports:
+        - containerPort: {{ .Values.listenPort }}
+        envFrom:
+        - configMapRef:
+            name: {{ .Release.Name }}
+      - name: redis
+        image: docker.io/redis/redis-stack:latest
+        ports:
+        - containerPort: 6379
+      
+    
