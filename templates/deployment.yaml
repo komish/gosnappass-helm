@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: gosnappass-{{ .Release.Name }}
   labels:
-    app: nginx
+    app: gosnappass
 spec:
   replicas: 1
   selector:
